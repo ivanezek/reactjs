@@ -11,7 +11,7 @@ function App() {
       </header>
       <main>
         <ItemListContainer texto='Bienvenidos!' />
-        <ItemListContainer texto='La tienda estará disponible pronto.' />
+        
       </main>
     </>
   );
