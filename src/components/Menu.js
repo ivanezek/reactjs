@@ -1,6 +1,6 @@
 import CartWidget from './CartWidget'
 
-export default function Navbar(){
+export default function Menu(){
     return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <div className="container-fluid">
