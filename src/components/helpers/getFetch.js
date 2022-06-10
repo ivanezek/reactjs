@@ -1,21 +1,33 @@
-
 let productos = [
-   { id: '1' ,categoria: 'juego', name: "Resident Evil 7", price: 37, img: '../../assets/img/re7.jpg' },
-   { id: '2' ,categoria: 'juego', name: "Red Dead Redemption", price: 27, img: '../../assets/img/rdr.jpg'},
-   { id: '3' ,categoria: 'juego', name: "UFC 3", price: 40, img: '../../assets/img/ufc3.jpg'  },
-];
+    {
+      id: '1',
+      nombre: 'Resident Evil 7',
+      descripcion: 'Village',
+      stock: 5,
+      img: '/src/assets/img/re7.jpg',
+    },
+    {
+      id: '2',
+      nombre: 'Red dead Redemption',
+      descripcion: '2014',
+      stock: 5,
+      img: '/src/assets/img/rdr.jpg',
+    },
+    {
+      id: '3',
+      nombre: 'UFC 3',
+      descripcion: 'Pelea',
+      stock: 5,
+      img: '/src/assets/img/ufc3.jpg'
+    },
+  ];
 
-export const getFetch = (id) =>{    
-   return new Promise( (resolve, reject)=>{   
-       setTimeout(()=>{
-           if (id) {
-               resolve(productos.find(prod => prod.id === id))              
-           } else {
-               resolve(productos)          
-           }
-       },2000)    
-         reject(console.log('Error 404'))    
-   },)
+export const getFetch = () =>{    
+    // acciones
+    return new Promise( (resolve, reject)=>{   
+        setTimeout(()=>{
+            resolve(productos)   
+        },3000)    
+        // reject('no qtengo nada para')    
+    })
 }  
-
-export default getFetch

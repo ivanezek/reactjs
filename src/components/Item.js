@@ -1,4 +1,11 @@
+import { useState, useEffect } from 'react'
+import { getFetch } from './helpers/getFetch'
+
 const Item = ({prod}) => {
+    const [productos, setProductos] = useState([])
+    useEffect( () => {
+        getFetch(setProductos, "1")
+    }, []);
     return (
         <div className='col-md-4 p-1'>                    
             <div className="card w-100 mt-5" >
