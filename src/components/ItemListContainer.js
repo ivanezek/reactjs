@@ -16,10 +16,12 @@ const ItemListContainer = ({texto}) => {
     useEffect(()=>{
         getFetch()
         .then((resp)=> {
-                setProductos(resp)
-                setLoading(false)
+            setProductos(resp)
         })
-        .catch(err => console.log(err))
+        .catch((err)=>{
+            console.log(err)
+        })
+        .finally(() => setLoading(false))
     }, [])
 
 
