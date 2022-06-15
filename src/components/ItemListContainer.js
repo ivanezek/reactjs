@@ -8,6 +8,17 @@ const ItemListContainer = () => {
     console.log(cant);
     }
     const [loading, setLoading] = useState(true)
+    const [productos, setProductos] = useState([])
+
+    useEffect(()=>{
+        getFetch()
+        .then((resp)=> {
+                //resultados guardados en useState
+                setProductos(resp)
+        })
+        .catch(err => console.log(err))
+        // .finally(()=> )
+    }, [])
 
     useEffect(()=>{
         getFetch()
@@ -21,7 +32,7 @@ const ItemListContainer = () => {
             { loading ? 
             <h1>Cargando...</h1>            
             :
-            <ItemList/>
+            <ItemList productos={productos}/>
             }
             <ItemCount stock= '10' initial='1' onAdd={onAdd} />
         </div>
