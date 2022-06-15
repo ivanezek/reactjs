@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getFetch } from './helpers/getFetch';
 import ItemCount from './ItemCount'
+import ItemDetailContainer from './ItemDetailContainer';
 import ItemList from "./ItemList";
 
 const ItemListContainer = () => {
@@ -35,6 +36,8 @@ const ItemListContainer = () => {
             <ItemList productos={productos}/>
             }
             <ItemCount stock= '10' initial='1' onAdd={onAdd} />
+
+            <ItemDetailContainer/>
         </div>
     )
 }

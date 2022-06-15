@@ -30,3 +30,24 @@ export const getFetch = () =>{
         },2000)     
     })
 }  
+
+
+let producto = 
+  {
+    id: 4,
+    name: 'FIFA 22',
+    descripcion: 'futbol',
+    stock: 4,
+    img: '/src/assets/img/fifa.jpg',
+  }
+
+export const getFetchOne = () =>{    
+  // acciones
+  return new Promise( (resolve, reject)=>{   
+      setTimeout(()=>{
+          resolve(producto)   
+      },2000)     
+  })
+}  
+
+
