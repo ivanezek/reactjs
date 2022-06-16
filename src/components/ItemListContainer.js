@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { getFetch } from './helpers/getFetch';
 import ItemCount from './ItemCount'
-import ItemDetailContainer from './ItemDetailContainer';
 import ItemList from "./ItemList";
 
 const ItemListContainer = () => {
@@ -10,16 +10,24 @@ const ItemListContainer = () => {
     }
     const [loading, setLoading] = useState(true)
     const [productos, setProductos] = useState([])
+    const {categoriaId} = useParams()
 
     useEffect(()=>{
+        if(categoriaId){
         getFetch()
         .then((resp)=> {
-                //resultados guardados en useState
-                setProductos(resp)
+             setProductos(resp.filter(productos => productos.descripcion == categoriaId))
         })
         .catch(err => console.log(err))
-        // .finally(()=> )
-    }, [])
+        }else{
+        getFetch()
+        .then((resp)=> {
+            setProductos(resp)
+        })
+        .catch(err => console.log(err))
+        }
+        // se pasa dentro de los corchetes el categoriaId para que refresque el componente segun el parametro
+    }, [categoriaId])
 
     useEffect(()=>{
         getFetch()
@@ -28,6 +36,9 @@ const ItemListContainer = () => {
         })
         .catch(err => console.log(err))
     })
+
+
+
     return (
         <div>
             { loading ? 
@@ -36,8 +47,6 @@ const ItemListContainer = () => {
             <ItemList productos={productos}/>
             }
             <ItemCount stock= '10' initial='1' onAdd={onAdd} />
-
-            <ItemDetailContainer/>
         </div>
     )
 }
