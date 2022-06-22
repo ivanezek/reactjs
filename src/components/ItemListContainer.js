@@ -1,13 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getFetch } from './helpers/getFetch';
-import ItemCount from './ItemCount'
 import ItemList from "./ItemList";
 
 const ItemListContainer = () => {
-    const onAdd = (cant) => {
-    console.log(cant);
-    }
     const [loading, setLoading] = useState(true)
     const [productos, setProductos] = useState([])
     const {categoriaId} = useParams()
@@ -16,7 +12,7 @@ const ItemListContainer = () => {
         if(categoriaId){
         getFetch()
         .then((resp)=> {
-             setProductos(resp.filter(productos => productos.descripcion == categoriaId))
+             setProductos(resp.filter(productos => productos.descripcion === categoriaId))
         })
         .catch(err => console.log(err))
         }else{
@@ -40,13 +36,12 @@ const ItemListContainer = () => {
 
 
     return (
-        <div>
+        <div className='menuItemList'>
             { loading ? 
             <h1>Cargando...</h1>            
             :
             <ItemList productos={productos}/>
             }
-            <ItemCount stock= '10' initial='1' onAdd={onAdd} />
         </div>
     )
 }

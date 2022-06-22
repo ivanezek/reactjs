@@ -14,7 +14,16 @@ export default function Menu(){
       <div className="collapse navbar-collapse show" id="navbarNavAltMarkup">
         <div className="navbar-nav">
           <NavLink to='/' className='nav-link'>Productos</NavLink>
-          <NavLink to='/category/terror' className='nav-link'>terror</NavLink>
+          <li className='nav-item dropdown'>
+            <NavLink to='#' className='nav-link dropdown-toggle' id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorías
+            </NavLink>
+            <ul className='dropdown-menu' aria-labelledby="navbarDropdown">
+              <li><NavLink className='dropdown-item' to='/category/terror'>Terror</NavLink></li>
+              <li><NavLink className='dropdown-item' to='/category/deportes'>Deportes</NavLink></li>
+              <li><NavLink className='dropdown-item' to='category/accion'>Acción</NavLink></li>
+            </ul>
+          </li>
         </div>
         <div className='icon-display'>
           <NavLink to='/cart' className='nav-link'><CartWidget /></NavLink>

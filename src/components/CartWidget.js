@@ -1,8 +1,6 @@
-import LogoCart from '../assets/img/Cart.svg'
-
 function CartWidget(){
     return (
-        <img src={LogoCart} alt="Carrito" className="icon-cart" />
+        <img src='assets/img/Cart.svg' alt="Carrito" className="icon-cart" />
     )
 }
 

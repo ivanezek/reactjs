@@ -13,7 +13,7 @@ const Item = ({prod}) => {
                         <p>Stock: {prod.stock}</p>                                                         
                     </div>
                     <div className="card-footer">  
-                        <button className="btn btn-outline-primary btn-block"><Link to={`/item/${prod.id}`}>Detalle del producto</Link></button>                
+                        <button className="btn btn-outline-primary"><Link to={`/item/${prod.id}`}>Detalle del producto</Link></button>                
                     </div>
                 </div>                                                                                                                   
              </div>

@@ -1,10 +1,9 @@
 .icon-display{
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   width: 100%;
 }
 .icon-cart{
-  background-color: red;
   height: 30px; width: 30px;
 }
 
@@ -14,4 +13,18 @@
 
 .numero{
   margin: 40px;
+}
+
+.menuItemList{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.card-header, .card-footer{
+  text-align: center;
+}
+.card-body{
+  display: grid;
+  place-items: center;
 }
