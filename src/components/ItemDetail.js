@@ -15,7 +15,7 @@ function ItemDetail ({producto}){
   return (
     <div className="row">
     <div className="col-md-6">
-        <img src={producto.img} alt={producto.img} />
+        <img src={'/'+producto.img} alt={producto.img} />
     </div>
     <div className="col-md-6">
         <h2>Nombre: {producto.name}</h2>
