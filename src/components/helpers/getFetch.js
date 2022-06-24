@@ -5,6 +5,7 @@ let productos = [
       descripcion: 'terror',
       stock: 5,
       img: 'assets/img/re7.jpg',
+      price: 6400
     },
     {
       id: '2',
@@ -12,13 +13,15 @@ let productos = [
       descripcion: 'accion',
       stock: 5,
       img: 'assets/img/rdr.jpg',
+      price: 4700
     },
     {
       id: '3',
       name: 'UFC 3',
       descripcion: 'Pelea',
       stock: 5,
-      img: 'assets/img/ufc3.jpg'
+      img: 'assets/img/ufc3.jpg',
+      price: 2700
     },
     {
       id: '4',
@@ -26,6 +29,7 @@ let productos = [
       descripcion: 'deportes',
       stock: 4,
       img: 'assets/img/fifa.jpg',
+      price: 8000
     },
   ];
 

@@ -10,7 +10,8 @@ const Item = ({prod}) => {
                     </div>
                     <div className="card-body">
                         <img src={prod.img} alt={prod.img} className='w-50'/>
-                        <p>Stock: {prod.stock}</p>                                                         
+                        <p>Stock: {prod.stock}</p>  
+                        <p>Precio: {prod.price} ARS</p>                                                       
                     </div>
                     <div className="card-footer">  
                         <button className="btn btn-outline-primary"><Link to={`/item/${prod.id}`}>Detalle del producto</Link></button>                

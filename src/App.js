@@ -5,11 +5,13 @@ import Menu from './components/Menu';
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart'
+import CartContextProvider from './components/CartContextProvider';
 
 function App() {
   
   
   return (
+    <CartContextProvider>
     <BrowserRouter>
       <header>
         <Menu/>
@@ -24,6 +26,7 @@ function App() {
         </Routes>
       </main>
     </BrowserRouter>
+    </CartContextProvider>
   );
 }
 
