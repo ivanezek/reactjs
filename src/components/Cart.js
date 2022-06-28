@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "./CartContextProvider";
 import CartItem from "./CartItem";
 function Cart(){
@@ -7,12 +8,22 @@ function Cart(){
 
   return (
     <>  
-      {cartList.length <1? <p>Carrito vacío</p> : cartList.map((i) => <CartItem key={i.producto.id} product={i.producto} />)}
+      {cartList.length <1? 
 
-      <button onClick={EmptyCart}>Limpiar el carrito</button>
-
-      <p>El precio total es: {PriceTotal()} ARS</p>
-      <p>La cantidad total de items del Carrito es {IconCart()}</p>
+        <p>Carrito vacío</p>
+      
+      :
+      cartList.map((i) => <CartItem key={i.producto.id} product={i.producto} />)
+      }
+      
+      {cartList.length >=1 ? 
+      <div>
+        <p>El precio total es: {PriceTotal()} ARS</p>
+        <button onClick={EmptyCart}>Limpiar el carrito</button>
+      </div>
+      :
+        <div><Link to='/'><button>Ver productos</button></Link></div>
+    }
     </>
   )
 }

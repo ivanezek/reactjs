@@ -37,7 +37,6 @@ const IconCart = () =>{
 const PriceTotal = () =>{
   return cartList.reduce((acum, product) => acum + product.cant * product.producto.price, 0)
 }
-
   return (
     <CartContext.Provider value={{addToCart, cartList, EmptyCart, DeleteItem, PriceTotal, IconCart}}>
         {children}

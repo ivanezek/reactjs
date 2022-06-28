@@ -28,3 +28,21 @@
   display: grid;
   place-items: center;
 }
+
+
+.carrito{
+  display: flex;
+  align-items: center;
+}
+
+.carrito-total{
+  background-color: yellow;
+  border-radius: 100px;
+  margin-left: -10px;
+  margin-bottom: 20px;
+  height: 25px;
+}
+
+.carrito-total h1{
+  font-size: 22px;
+}
