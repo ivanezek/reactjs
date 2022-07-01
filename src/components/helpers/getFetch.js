@@ -3,22 +3,22 @@ let productos = [
       id: '1',
       name: 'Resident Evil 7',
       descripcion: 'terror',
-      stock: 5,
+      stock: 7,
       img: 'assets/img/re7.jpg',
-      price: 6400
+      price: 5300
     },
     {
       id: '2',
-      name: 'Red dead Redemption',
+      name: 'Red Dead Redemption',
       descripcion: 'accion',
-      stock: 5,
+      stock: 8,
       img: 'assets/img/rdr.jpg',
       price: 4700
     },
     {
       id: '3',
       name: 'UFC 3',
-      descripcion: 'Pelea',
+      descripcion: 'deportes',
       stock: 5,
       img: 'assets/img/ufc3.jpg',
       price: 2700

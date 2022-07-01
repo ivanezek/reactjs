@@ -2,14 +2,14 @@ import { useState } from 'react';
 
 export default function ItemCount({stock, initial, onAdd}){
 
-    const [count, setCount] = useState(parseInt(initial))
+    let [count, setCount] = useState(parseInt(initial))
 
     const agregarItem = () =>{
-       count == stock ? alert('No hay más stock')  : setCount(count + 1)
+       count === stock ? alert('No hay más stock')  : setCount(count + 1)
     }
 
     const eliminarItem = ()=>{
-        count == 0 ? alert('No hay productos')  : setCount(count - 1)
+        count === 0 ? alert('No hay productos')  : setCount(count - 1)
     }
 
     const agregarCarrito = ()=>{
