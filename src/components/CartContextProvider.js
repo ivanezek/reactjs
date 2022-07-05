@@ -10,7 +10,13 @@ const CartContextProvider = ({children}) => {
 
   const addToCart = (producto, cant) =>{
     if(IsInCart(producto.id)){
-      alert('El producto ya se encuentra en el carrito.')
+      console.log(cartList)
+      const addProductoExtra = cartList.find( cl => cl.producto.id === producto.id )
+      console.log(addProductoExtra)
+      addProductoExtra.cant += cant
+
+      const newArray = cartList.filter(cl => cl.producto.id !== producto.id)
+      setCartList([...newArray, addProductoExtra])
     }else{
       setCartList([...cartList, {producto, cant}])
       alert('El producto se ha agregado correctamente.')
@@ -18,7 +24,7 @@ const CartContextProvider = ({children}) => {
   }
 
   const IsInCart = (id) =>{
-    return cartList&&cartList.some((i) => i.producto.id === id)
+    return cartList.some((i) => i.producto.id === id)
   }
 
   const EmptyCart = () =>{

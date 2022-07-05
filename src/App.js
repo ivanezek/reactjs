@@ -16,10 +16,18 @@ function App() {
       <header>
         <Menu/>
       </header>
+      <div className='hero'>
+        <div className='cube'></div>
+        <div className='cube'></div>
+        <div className='cube'></div>
+        <div className='cube'></div>
+        <div className='cube'></div>
+        <div className='cube'></div>
+      </div>
       <main>
         <Routes>
-          <Route path='/' element={<ItemListContainer texto='Bienvenidos!'/>}/>
-          <Route path='/category/:categoriaId' element={<ItemListContainer texto='Bienvenidos!'/>}/>
+          <Route path='/' element={<ItemListContainer/>}/>
+          <Route path='/category/:categoriaId' element={<ItemListContainer/>}/>
           <Route path='/item/:id' element={<ItemDetailContainer/>} />
           <Route path='/cart' element={<Cart />} />
           <Route path='*' element={<Navigate to='/' />} />

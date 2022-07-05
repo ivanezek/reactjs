@@ -7,6 +7,10 @@
   height: 30px; width: 30px;
 }
 
+body{
+  background-image: url(../public/assets/img/bg.jpg);
+}
+
 .contador{
   display: flex;
 }
@@ -46,3 +50,9 @@
 .carrito-total h1{
   font-size: 22px;
 }
+
+.cart-item-view img{
+  height: 180px;
+}
+
+/* AAAAAAAAAAA */

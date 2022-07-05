@@ -7,7 +7,7 @@ import { doc, getDoc, getFirestore } from 'firebase/firestore'
 
 
 const ItemDetailContainer = () => {
-    const [producto, SetProducto] = useState([])
+    const [producto, SetProducto] = useState({})
     const {id} = useParams()
     
     /*useEffect(() =>{
@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
           const db = getFirestore()
           const queryItem = doc(db, 'productos', id)
           getDoc(queryItem) // promesa
-          .then(data => SetProducto( {id: producto.id, ...data.data()} )) 
+          .then(data => SetProducto( {id: id, ...data.data()} )) 
         })
 
 

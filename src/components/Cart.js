@@ -4,16 +4,16 @@ import { CartContext } from "./CartContextProvider";
 import CartItem from "./CartItem";
 function Cart(){
   
-  const {cartList, EmptyCart, PriceTotal, IconCart} = useContext(CartContext)
+  const {cartList, EmptyCart, PriceTotal} = useContext(CartContext)
 
   return (
-    <>  
+    <div className="cart-view">  
       {cartList.length <1? 
 
         <p>Carrito vacío</p>
       
       :
-      cartList.map((i) => <CartItem key={i.producto.id} product={i.producto} />)
+      cartList.map((i) => <CartItem key={i.producto.id} cant={i.cant} product={i.producto} />)
       }
       
       {cartList.length >=1 ? 
@@ -24,7 +24,7 @@ function Cart(){
       :
         <div><Link to='/'><button>Ver productos</button></Link></div>
     }
-    </>
+    </div>
   )
 }
 
