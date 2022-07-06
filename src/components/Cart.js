@@ -1,3 +1,4 @@
+import { addDoc, collection, documentId, getDocs, getFirestore, query, where, writeBatch } from "firebase/firestore";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContextProvider";
@@ -7,23 +8,44 @@ function Cart(){
   const {cartList, EmptyCart, PriceTotal} = useContext(CartContext)
 
   
-function CartOrder(e){
+async function CartOrder(e){
   e.preventDefault()
   let order = {}
 
   order.buyer = {name: 'ivan', email: 'ivan@gmail.com', phoneNumber: '112345678'}
   order.total = PriceTotal()
 
-  order.productos = cartList.map(CartItem => {
-    console.log(CartItem)
-    const id = CartItem.id
-    const name = CartItem.product.name
-    const price = CartItem.product.price * CartItem.product.cant
+  order.productos = cartList.map(cartItem => {
+    const id = cartItem.producto.id
+    const name = cartItem.producto.name
+    const cant = cartItem.cant
+    const price = cartItem.producto.price * cartItem.cant 
 
-    return {id, name, price}
+    return {id, name, price, cant}
   })
-
   console.log(order)
+
+  const db = getFirestore()
+  const orderCollection = collection(db, 'orders')
+  addDoc(orderCollection, order)
+  
+  // actualizacion stock
+
+  const queryCollectionStock = collection(db, 'items')
+
+  const queryUpdateStock =  query(
+    queryCollectionStock, where(documentId(), 'in', cartList.map(producto => producto.id) )
+  )
+
+  const batch = writeBatch(db)
+
+  await getDocs(queryUpdateStock)
+  .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
+    stock: res.data().stock - cartList.find(producto => producto.id === res.id).cant
+  })))
+  .finally(() => alert('Compra realizada'))
+
+  batch.commit()
 }
 
 
