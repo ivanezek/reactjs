@@ -6,6 +6,8 @@ import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart'
 import CartContextProvider from './components/CartContextProvider';
+import { CheckoutForm } from './components/CheckoutForm';
+import { OrderCompleted } from './components/OrderCompleted';
 
 function App() {
   
@@ -16,14 +18,6 @@ function App() {
       <header>
         <Menu/>
       </header>
-      <div className='hero'>
-        <div className='cube'></div>
-        <div className='cube'></div>
-        <div className='cube'></div>
-        <div className='cube'></div>
-        <div className='cube'></div>
-        <div className='cube'></div>
-      </div>
       <main>
         <Routes>
           <Route path='/' element={<ItemListContainer/>}/>
@@ -31,6 +25,8 @@ function App() {
           <Route path='/item/:id' element={<ItemDetailContainer/>} />
           <Route path='/cart' element={<Cart />} />
           <Route path='*' element={<Navigate to='/' />} />
+          <Route path='/checkout' element={ <CheckoutForm/> } />
+          <Route path='/ordercompleted' element={ <OrderCompleted/> } />
         </Routes>
       </main>
     </BrowserRouter>

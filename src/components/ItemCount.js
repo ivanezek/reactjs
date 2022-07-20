@@ -27,12 +27,12 @@ export default function ItemCount({stock, initial, onAdd}){
         <>
             <div className='btnContadorContainer'>
                 <div className='contador'>
-                    <button onClick= {eliminarItem} id='botonResta' className='resta'>-</button>
-                    <p className='numero'>El total de unidades es: {count}</p>
-                    <button onClick= {agregarItem} id='botonSuma' className='suma'>+</button>
+                    <button onClick= {eliminarItem} id='botonResta' className='resta btn btn-warning'>-</button>
+                    <p>{count}</p>
+                    <button onClick= {agregarItem} id='botonSuma' className='suma btn btn-warning'>+</button>
                 </div>
                 <div>
-                    <button onClick={agregarCarrito} id="addToCart">Agregar al carrito</button>
+                    <button onClick={agregarCarrito} id="addToCart" className='btn btn-success'>Agregar al carrito</button>
                 </div>
             </div>
         </>

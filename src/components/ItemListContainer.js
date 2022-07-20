@@ -41,31 +41,19 @@ const ItemListContainer = () => {
 
 
     return (
-        <div className='menuItemList'>
+        <div className='home container'>
             { loading ? 
-            <h1>Cargando...</h1>            
+            <div className='loading'>
+                <h1>Cargando...</h1>    
+            </div>
             :
-            <ItemList productos={productos}/>
-            }
+            <div className='menuItemList'>
+                <ItemList productos={productos}/>
+            </div>
+
+          }
         </div>
     )
 }
 
 export default ItemListContainer
-
-/*     useEffect(()=>{
-        if(categoriaId){
-        getFetch()
-        .then((resp)=> {
-             setProductos(resp.filter(productos => productos.descripcion === categoriaId))
-        })
-        .catch(err => console.log(err))
-        }else{
-        getFetch()
-        .then((resp)=> {
-            setProductos(resp)
-        })
-        .catch(err => console.log(err))
-        }
-        // se pasa dentro de los corchetes el categoriaId para que refresque el componente segun el parametro
-    }, [categoriaId])  */

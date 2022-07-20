@@ -45,6 +45,7 @@ const PriceTotal = () =>{
 }
 
 
+
   return (
     <CartContext.Provider value={{addToCart, cartList, EmptyCart, DeleteItem, PriceTotal, IconCart}}>
         {children}

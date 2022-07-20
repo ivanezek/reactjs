@@ -12,7 +12,8 @@ const CartItem = ({product, cant}) => {
         <img src={img} alt={img} />
         <h4>{name}</h4>
         <p>Usted ha seleccionado {cant} unidades</p>
-        <button onClick={() => DeleteItem(id)}>Borrar producto</button>
+        <button className="btn btn-danger" onClick={() => DeleteItem(id)}>Borrar producto</button>
+        <hr></hr>
     </div>
   )
 }
