@@ -1,10 +1,16 @@
-# Getting Started with Create React App
+# Project developed with React Js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Deploy link: https://mateazo.vercel.app/
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Visualización de productos, tanto en totalidad como filtrado por categorías
+
+### Agregar items al carrito
+
+### Continuar con la compra rellenando un form de checkout
+
+### Registro de la compra en Firebase
 
 ### `npm start`
 
